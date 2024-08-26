@@ -76,7 +76,7 @@ end imagemagickTasks
 on sharpenItem(itemPath, outputPath, param)
 	set {filename, fileBaseName, fileExtension, outputDirectory} to getItemFileInfo(itemPath, outputPath)
 	set toItemPath to outputDirectory & fileBaseName & "-sharpen-" & param & "." & fileExtension
-	set shellCommand to my magickBin & " " & quoted form of itemPath & " " & " -sharpen " & param & " " & quoted form of toItemPath
+	set shellCommand to my magickBin & " " & quoted form of itemPath & " " & " -sharpen 0x" & param & " " & quoted form of toItemPath
 	log shellCommand
 	do shell script shellCommand
 	do shell script "rm " & quoted form of itemPath
