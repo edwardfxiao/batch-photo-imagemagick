@@ -58,7 +58,7 @@ on run
 end run
 
 on imagemagickTasks(folderPath, outputPath, params)
-	set {sharpenNumber } to params
+	set {sharpenNumber} to params
 	tell application "Finder"
 		set itemList to every file of folderPath
 		set totalItems to count of itemList
@@ -195,5 +195,6 @@ on getCalcSize(itemPath, minSize)
 	else
 		set calcSize to minSize / aspectRatio
 	end if
+	return calcSize
 end getCalcSize
 
